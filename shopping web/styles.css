@@ -1,0 +1,146 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-color: #f8f8f8;
+    padding: 20px;
+    text-align: center;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+header nav ul li {
+    margin: 0 15px;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+header h1 {
+    margin-bottom: 10px;
+}
+
+header p {
+    margin: 10px 0;
+}
+
+header button {
+    padding: 10px 20px;
+    background-color: #ff8c00;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+header button:nth-of-type(1) {
+    margin-right: 10px;
+}
+
+header button:nth-of-type(2) {
+    margin-left: 10px;
+}
+
+#products {
+    padding: 20px;
+    text-align: center;
+}
+
+.product-card {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    width: 150px;
+}
+
+.product-card img {
+    width: 100%;
+    height: auto;
+}
+
+.product-card h3 {
+    margin: 10px 0;
+}
+
+.product-card p {
+    color: #ff8c00;
+    font-weight: bold;
+}
+
+.product-card a {
+    display: block;
+    margin: 5px 0;
+    color: #ff8c00;
+    text-decoration: none;
+}
+
+#cart {
+    padding: 20px;
+    text-align: center;
+}
+
+footer {
+    background-color: #f8f8f8;
+    padding: 20px;
+    text-align: center;
+}
+
+footer h1 {
+    margin-bottom: 10px;
+}
+
+footer input {
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+footer button {
+    padding: 10px 20px;
+    background-color: #ff8c00;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+footer ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+footer ul li {
+    margin: 0 15px;
+}
+
+footer ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+footer p {
+    margin: 10px 0;
+}
+
+.footer .copyright {
+    margin-top: 10px;
+    font-size: 12px;
+    color: #888;
+}
