@@ -4,59 +4,129 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shopping Website</title>
-    <link rel="stylesheet" href="styles.css">
+    <!-- Include Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* Header Styles */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+header nav {
+    display: none;
+    margin-bottom: 20px;
+}
+
+header nav.active {
+    display: block;
+}
+
+header nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 15px;
+    display: inline-block;
+}
+
+header nav a:hover {
+    background-color: #575757;
+}
+
+header .search-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 10px;
+}
+
+header .menu-icon {
+    font-size: 20px;
+    color: #fff;
+    padding: 10px;
+    background-color: #ff9800;
+    border-radius: 50%;
+    text-align: center;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+header select,
+header input[type="text"],
+header button {
+    padding: 10px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+}
+
+header button {
+    background-color: #ff9800;
+    color: #fff;
+    cursor: pointer;
+}
+
+header button:hover {
+    background-color: #e68900;
+}
+
+    </style>
 </head>
 <body>
     <header>
-        <nav>
-            <ul>
-                <li><a href="#">Best Sellers</a></li>
-                <li><a href="#">Gift ideas</a></li>
-                <li><a href="#">New Releases</a></li>
-                <li><a href="#">Today's Deals</a></li>
-                <li><a href="#">Customer Service</a></li>
-            </ul>
-        </nav>
-        <h1></h1>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#products">Products</a></li>
-                <li><a href="#cart">Cart (<span id="cart-count">0</span>)</a></li>
-                <li><input type="text" placeholder="Search..."><button onclick="search()">Search</button></li>
-            </ul>
-        </nav>
+        <div id="navibar">
+            <nav>
+                <a href="#">Best Sellers</a>
+                <a href="#">Gift ideas</a>
+                <a href="#">New Releases</a>
+                <a href="#">Today's Deals</a>
+                <a href="#">Customer Service</a>    
+            </nav>
+        </div>
+        <h1>Eflyer</h1>
+        <div class="search-section">
+            <a href="#" class="menu-icon" onclick="toggleMenu()"><i class="fas fa-bars"></i></a>
+            <select name="Category" id="">
+                <option value="">All Category</option>
+                <option value=""><a href="#">Man</a></option>
+                <option value=""><a href="#">Woman</a></option>
+                <option value=""><a href="#">Electronic</a></option>
+            </select>
+            <input type="text" placeholder="Search..."><button onclick="search()">Search</button>
+            <select name="medium" id="">
+                <option value="">English</option>
+                <option value="">Hindi</option>
+            </select>
+            <a href="#"><button>Cart</button></a>
+        </div>
     </header>
-    
-    <section id="products">
-        <h2>Products</h2>
-        <div class="product-card">
-            <img src="product1.jpg" alt="Product 1">
-            <h3>Product 1</h3>
-            <p>$10.00</p>
-            <button onclick="addToCart('Product 1', 10.00)">Add to Cart</button>
-        </div>
-        <div class="product-card">
-            <img src="product2.jpg" alt="Product 2">
-            <h3>Product 2</h3>
-            <p>$20.00</p>
-            <button onclick="addToCart('Product 2', 20.00)">Add to Cart</button>
-        </div>
-        <div class="product-card">
-            <img src="product3.jpg" alt="Product 3">
-            <h3>Product 3</h3>
-            <p>$30.00</p>
-            <button onclick="addToCart('Product 3', 30.00)">Add to Cart</button>
-        </div>
-    </section>
 
-    <section id="cart">
-        <h2>Shopping Cart</h2>
-        <ul id="cart-items"></ul>
-        <p>Total: $<span id="total-price">0.00</span></p>
-        <button onclick="checkout()">Checkout</button>
-    </section>
-
-    <script src="script.js"></script>
+    <script>
+        function toggleMenu() {
+            const navibar = document.getElementById('navibar');
+            navibar.classList.toggle('active');
+        }
+    </script>
 </body>
 </html>

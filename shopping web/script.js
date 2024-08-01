@@ -1,19 +1,39 @@
-function search() {
-    const query = document.querySelector('input[type="text"]').value;
-    alert(`Searching for: ${query}`);
-}
+document.addEventListener("DOMContentLoaded", function() {
+    // Variables for the slider
+    let currentIndex = 0;
+    const texts = [
+        "GET START YOUR FAVRIOT SHOPING",
+        "DISCOVER NEW ARRIVALS",
+        "ENJOY EXCLUSIVE OFFERS"
+    ];
+    const prevButton = document.getElementById("prev");
+    const nextButton = document.getElementById("next");
+    const textElement = document.querySelector("header div p");
 
-let currentImageIndex = 0;
-const backgroundImages = ['background1.jpg', 'background2.jpg', 'background3.jpg'];
-
-function changeBackgroundImage(direction) {
-    if (direction === 'next') {
-        currentImageIndex = (currentImageIndex + 1) % backgroundImages.length;
-    } else if (direction === 'prev') {
-        currentImageIndex = (currentImageIndex - 1 + backgroundImages.length) % backgroundImages.length;
+    // Functions for the slider
+    function showText(index) {
+        textElement.innerHTML = texts[index];
     }
-    document.body.style.backgroundImage = `url(${backgroundImages[currentImageIndex]})`;
-}
 
-document.querySelectorAll('header button')[0].addEventListener('click', () => changeBackgroundImage('prev'));
-document.querySelectorAll('header button')[1].addEventListener('click', () => changeBackgroundImage('next'));
+    function showPrevText() {
+        currentIndex = (currentIndex - 1 + texts.length) % texts.length;
+        showText(currentIndex);
+    }
+
+    function showNextText() {
+        currentIndex = (currentIndex + 1) % texts.length;
+        showText(currentIndex);
+    }
+
+    // Event listeners for the slider
+    prevButton.addEventListener("click", showPrevText);
+    nextButton.addEventListener("click", showNextText);
+
+    // Initial text
+    showText(currentIndex);
+});
+
+// Dummy search function
+function search() {
+    alert("Search functionality is not implemented yet.");
+}
